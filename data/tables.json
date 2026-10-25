@@ -1,7 +1,7 @@
 {
  "ready": true,
- "ranked": 1,
- "players": 1,
+ "ranked": 2,
+ "players": 2,
  "tables": {
   "רמה 1": [],
   "רמה 2": [
@@ -19,10 +19,24 @@
     "move": 0
    }
   ],
-  "רמה 3": [],
+  "רמה 3": [
+   {
+    "rank": 1,
+    "name": "מרדכי א.",
+    "anon": false,
+    "emoji": "🐢",
+    "city": "ירושלים",
+    "points": 1400,
+    "wins": 0,
+    "losses": 0,
+    "streak": 0,
+    "new": true,
+    "move": 0
+   }
+  ],
   "רמה 4": [],
   "רמה 5": []
  },
  "recent": [],
- "updated": "25.10 13:13"
+ "updated": "25.10 16:13"
 }
