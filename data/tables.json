@@ -1,1 +1,28 @@
-{"ready": false, "ranked": 0, "min": 8, "players": 0, "tables": {}, "recent": [], "updated": ""}
+{
+ "ready": true,
+ "ranked": 1,
+ "players": 1,
+ "tables": {
+  "רמה 1": [],
+  "רמה 2": [
+   {
+    "rank": 1,
+    "name": "יואב ב.",
+    "anon": false,
+    "emoji": "🐆",
+    "city": "ירושלים",
+    "points": 1150,
+    "wins": 0,
+    "losses": 0,
+    "streak": 0,
+    "new": true,
+    "move": 0
+   }
+  ],
+  "רמה 3": [],
+  "רמה 4": [],
+  "רמה 5": []
+ },
+ "recent": [],
+ "updated": "25.10 13:13"
+}
