@@ -6,16 +6,22 @@
 <title>מדיניות פרטיות – Match Point</title>
 <meta name="description" content="מדיניות הפרטיות של Match Point – שירות WhatsApp לשחקני טניס בירושלים.">
 <link rel="icon" href="assets/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;800&family=Secular+One&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="site">
-  <div class="wrap">
-    <a href="index.html"><img src="assets/logo.png" alt="Match Point"></a>
-    <span class="name">Match Point</span>
-    <nav><a href="index.html">ראשי</a><a href="terms.html">תנאי שימוש</a></nav>
-  </div>
-</header>
+<div class="wrap">
+  <header class="nav">
+    <nav class="links" aria-label="ראשי">
+      <a class="btn ball" href="https://t.me/rally_up_bot">להתחיל בטלגרם</a>
+      <a href="how.html">איך זה עובד</a>
+      <a href="index.html#table">טבלת דירוג</a>
+      <a href="me.html">האזור שלי</a>
+    </nav>
+    <a class="brand" href="index.html"><span>Match Point</span><img src="assets/logo.png" alt=""></a>
+  </header>
+</div>
 
 <main class="wrap">
   <article class="doc">
@@ -48,12 +54,13 @@
 
     <h2>מה שחקנים אחרים רואים</h2>
     <ul>
-      <li>כשמבקשים משחק או עונים לבקשה, השחקן השני רואה את כרטיס השחקן: שם פרטי ואות ראשונה של שם המשפחה,
+      <li>כשמבקשים משחק או עונים לבקשה, השחקן השני רואה את כרטיס השחקן: השם המלא,
         גיל, רמה, עיר ומגרש מועדף, מתי נוח לשחק, התמונה או האימוג'י והמשפט שבחרת, ובנוסף מקום בטבלה, מאזן
         משחקים ואחוז אמינות.</li>
       <li><strong>מספר הטלפון</strong> עובר לשחקן אחר <strong>רק אחרי ששניכם הסכמתם להתחבר</strong>.</li>
-      <li>טבלאות הדירוג מציגות שם פרטי ואות, נקודות ומאזן. אפשר לצאת מהטבלאות בכל עת בהודעה "בלי טבלה".
-        שחקנים מתחת לגיל 18 אינם מוצגים בטבלאות ציבוריות.</li>
+      <li>טבלאות הדירוג – בבוט ובאתר – מציגות שם פרטי ואות (או בלי שם, עם האימוג'י בלבד, לפי בחירתך בהרשמה או
+        בהודעה "אנונימי בטבלה"), עיר, נקודות, מאזן ורצף ניצחונות, ותוצאות אחרונות של משחקים. אפשר לצאת מהטבלאות
+        בכל עת בהודעה "בלי טבלה". שחקנים מתחת לגיל 18 אינם מוצגים בטבלאות ציבוריות.</li>
     </ul>
 
     <h2>ספקי שירות</h2>
@@ -102,10 +109,11 @@
       need the team (for example a harassment report or a request to talk to a person). We do not send marketing
       messages and we do not sell data.</p>
     <h2>What other players see</h2>
-    <p>Your player card (first name and last initial, age, level, city and favourite court, when you play, your
+    <p>Your player card (full name, age, level, city and favourite court, when you play, your
       photo or emoji and line, plus rank, record and reliability) when you request or answer a match. <strong>Your phone number is shared only after both players agree to connect.</strong>
-      Rating tables show first name and last initial; you can opt out at any time by sending "בלי טבלה". Players
-      under 18 are never shown in public tables.</p>
+      Rating tables, in the bot and on this website, show first name and last initial – or no name, only your
+      emoji, if you choose so ("אנונימי בטבלה") – with city, points, record, win streak and recent results; you can
+      opt out at any time by sending "בלי טבלה". Players under 18 are never shown in public tables.</p>
     <h2>Service providers</h2>
     <p>Meta (WhatsApp Business Platform) for message delivery; Anthropic for language processing of message text
       (not used to train models); and our hosting provider.</p>

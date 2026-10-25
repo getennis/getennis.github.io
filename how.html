@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>איך זה עובד – Match Point</title>
+<meta name="description" content="איך מוצאים שותף לטניס עם רוני, איך נספרות הנקודות, ומה זה מאזן ורצף.">
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;800&family=Secular+One&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="nav">
+    <nav class="links" aria-label="ראשי">
+      <a class="btn ball" href="https://t.me/rally_up_bot">להתחיל בטלגרם</a>
+      <a href="how.html" aria-current="page">איך זה עובד</a>
+      <a href="index.html#table">טבלת דירוג</a>
+      <a href="me.html">האזור שלי</a>
+    </nav>
+    <a class="brand" href="index.html"><span>Match Point</span><img src="assets/logo.png" alt=""></a>
+  </header>
+
+  <section>
+    <h1 class="display rise" style="margin: 0; font-size: clamp(44px, 6vw, 80px); line-height: 1.05">איך זה עובד</h1>
+    <p class="sub" style="font-size: 20px">חמישה צעדים, בלי אפליקציה. הכל קורה בצ'אט עם רוני בטלגרם.</p>
+    <div class="steps">
+      <div class="card step rise"><div class="n">1</div><div><h3>נרשמים בשתי דקות</h3>
+        <p>כותבים לרוני בטלגרם: שם, רמה, עיר ומתי נוח לך. אפשר ללחוץ על כפתורים או פשוט לכתוב.</p></div></div>
+      <div class="card step rise" style="animation-delay: .07s"><div class="n">2</div><div><h3>מבקשים משחק</h3>
+        <p>"בא לי מחר בערב" – ורוני שולח את הבקשה לשחקנים שמתאימים לך ברמה, בעיר ובזמן.</p></div></div>
+      <div class="card step rise" style="animation-delay: .14s"><div class="n">3</div><div><h3>בוחרים שותף</h3>
+        <p>מי שעונה "כן" מגיע אליך ככרטיס. בוחרים – ורק אז מתחלפים מספרי טלפון. מי שלא נבחר מקבל הצעה למשחק אחר.</p></div></div>
+      <div class="card step rise" style="animation-delay: .21s"><div class="n">4</div><div><h3>משחקים</h3>
+        <p>את המגרש והשעה סוגרים ביניכם – ורוני מצרף קישור להזמנת מגרש.</p></div></div>
+      <div class="card step rise" style="animation-delay: .28s"><div class="n">5</div><div><h3>מדווחים ומטפסים</h3>
+        <p>אחרי המשחק כותבים את התוצאה במשפט אחד, היריב מאשר, והטבלה מתעדכנת.</p></div></div>
+    </div>
+  </section>
+
+  <section id="points">
+    <h2 class="display">איך נספרות הנקודות</h2>
+    <p class="sub" style="font-size: 18px; max-inline-size: 760px">לא מקבלים נקודות על כמות משחקים – רק על תוצאות.
+      ניצחון על מישהו חזק ממך שווה הרבה, ניצחון על חלש ממך שווה מעט, והפסד לחלש ממך עולה ביוקר.</p>
+    <div class="split">
+      <div class="main card white calc">
+        <h3>כמה שווה ניצחון 6–4 6–4?</h3>
+        <div class="label">הרמה שלך</div><div class="pills" id="me" role="group" aria-label="הרמה שלך"></div>
+        <div class="label">הרמה של היריב</div><div class="pills" id="them" role="group" aria-label="הרמה של היריב"></div>
+        <div class="res">
+          <div class="w">ניצחון<strong id="gain">+</strong></div>
+          <div class="l">הפסד באותה תוצאה<strong id="loss">−</strong></div>
+        </div>
+        <div class="note">חישוב משוער לשחקן אחרי 5 משחקים. מערכות שוקלות הכי הרבה, ומשחקונים נספרים גם הם.</div>
+      </div>
+      <div class="side card">
+        <h3>הרמה זזה לפי הנקודות</h3>
+        <p style="margin-block-end: 16px">ב-5 המשחקים הראשונים הרמה היא זו שבחרת. מהמשחק החמישי היא נקבעת לפי הנקודות:</p>
+        <div class="band"><b>רמה 1</b><div class="bar"><i style="inline-size: 20%"></i></div><span>עד 1099</span></div>
+        <div class="band"><b>רמה 2</b><div class="bar"><i style="inline-size: 40%"></i></div><span>1100–1299</span></div>
+        <div class="band"><b>רמה 3</b><div class="bar"><i style="inline-size: 60%"></i></div><span>1300–1499</span></div>
+        <div class="band"><b>רמה 4</b><div class="bar"><i style="inline-size: 80%"></i></div><span>1500–1699</span></div>
+        <div class="band"><b>רמה 5</b><div class="bar"><i style="inline-size: 100%"></i></div><span>1700 ומעלה</span></div>
+        <p class="sub">בין אותם שני שחקנים נספרים לנקודות עד 2 משחקים בשבוע.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="cards">
+      <div class="card solid"><div class="kicker">מאזן</div>
+        <p>כמה משחקים ניצחת מול כמה הפסדת. 9–3 = 9 ניצחונות ו-3 הפסדים. בבוט ("ההיסטוריה שלי") רואים גם את המערכות.</p></div>
+      <div class="card solid"><div class="kicker" style="color: var(--streak)">רצף</div>
+        <p>כמה משחקים ניצחת ברצף, בלי הפסד באמצע. הפסד מאפס את הרצף.</p></div>
+      <div class="card solid"><div class="kicker" style="color: #fff">פרטיות</div>
+        <p>בטבלה רק שם פרטי ואות – או בלי שם, עם אימוג'י. הטלפון לא מופיע אף פעם. שחקנים מתחת ל-18 לא מוצגים.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="card ball" style="display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between">
+      <div class="display" style="font-size: 30px">מוכן/ה למשחק הראשון?</div>
+      <a class="btn dark big" href="https://t.me/rally_up_bot" style="color: var(--ball)">להתחיל בטלגרם</a>
+    </div>
+  </section>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <span>© 2026 Match Point</span>
+    <span><a href="privacy.html">מדיניות פרטיות · Privacy</a> · <a href="terms.html">תנאי שימוש · Terms</a></span>
+  </div>
+</footer>
+
+<script>
+// Same rating maths as the bot (app/domain/elo.py): expected score, K=32 after 5 games, 6-4 6-4 = 0.9.
+(function () {
+  const st = { me: 3, them: 4 };
+  const elo = (lv) => 800 + 200 * lv;
+  function pills(id, key) {
+    const el = document.getElementById(id);
+    el.innerHTML = [1, 2, 3, 4, 5].map((n) =>
+      `<button type="button" class="pill" aria-pressed="${n === st[key]}" aria-label="רמה ${n}" data-n="${n}">${n}</button>`).join("");
+    el.querySelectorAll("button").forEach((b) => b.addEventListener("click", () => { st[key] = +b.dataset.n; draw(); }));
+  }
+  function draw() {
+    pills("me", "me"); pills("them", "them");
+    const e = 1 / (1 + Math.pow(10, (elo(st.them) - elo(st.me)) / 400));
+    document.getElementById("gain").textContent = "+" + Math.max(1, Math.round(32 * (0.9 - e)));
+    document.getElementById("loss").textContent = "−" + Math.max(1, Math.round(32 * (0.9 - (1 - e))));
+  }
+  draw();
+})();
+</script>
+</body>
+</html>

@@ -3,74 +3,105 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Match Point – קהילת הטניס של ירושלים</title>
-<meta name="description" content="Match Point מחבר בין שחקני טניס בירושלים: מוצאים שותף/ה למשחק ברמה שלך דרך WhatsApp, ושומרים תוצאות, דירוג והיסטוריה.">
+<title>Match Point – מוצאים שותף לטניס</title>
+<meta name="description" content="Match Point מחבר בין שחקני טניס: רוני, הסוכן שלנו בטלגרם, מוצא לך שותף ברמה שלך, בעיר ובזמן שנוח לך – ושומר תוצאות, דירוג והיסטוריה.">
 <!-- Meta domain verification tag goes here, e.g. <meta name="facebook-domain-verification" content="..."> -->
-<meta property="og:title" content="Match Point – קהילת הטניס של ירושלים">
-<meta property="og:description" content="מוצאים שותף/ה לטניס ברמה שלך דרך WhatsApp.">
+<meta property="og:title" content="Match Point – מוצאים שותף לטניס">
+<meta property="og:description" content="רוני מוצא לך שותף לטניס ברמה שלך, בעיר ובזמן שנוח לך.">
 <meta property="og:image" content="assets/og.jpg">
 <meta property="og:type" content="website">
 <link rel="icon" href="assets/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;800&family=Secular+One&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="site">
-  <div class="wrap">
-    <img src="assets/logo.png" alt="Match Point">
-    <span class="name">Match Point</span>
-    <nav>
-      <a href="#how">איך זה עובד</a>
-      <a href="#contact">צור קשר</a>
-      <a href="privacy.html">פרטיות</a>
-      <a href="terms.html">תנאי שימוש</a>
-    </nav>
-  </div>
-</header>
 
-<div class="hero">
-  <img class="logo" src="assets/logo.png" alt="">
-  <h1>מוצאים שותף לטניס – ב-WhatsApp</h1>
-  <p>Match Point מחבר בין שחקני טניס בירושלים שרוצים לשחק, ושומר לכל אחד תוצאות, דירוג והיסטוריית משחקים.</p>
-  <a class="cta" href="#contact">דברו איתנו</a>
+<div class="ticker" id="ticker" hidden>
+  <div class="label"><span class="dot"></span>תוצאות אחרונות</div>
+  <div class="track"><div class="items" id="ticker-items"></div></div>
 </div>
 
-<main class="wrap">
-  <section id="how">
-    <h2>איך זה עובד</h2>
-    <div class="grid">
-      <div class="card"><div class="icon">💬</div><h3>כותבים לבוט</h3>
-        <p>"בא לי לשחק היום בין 18 ל-21" – הבקשה נשלחת לשחקנים ברמה דומה שפנויים בזמן הזה.</p></div>
-      <div class="card"><div class="icon">🤝</div><h3>בוחרים שותף</h3>
-        <p>מי שעונה "כן" מגיע אליך ככרטיס קצר. בוחרים, ושני הצדדים מקבלים טלפון כדי לתאם שעה ומגרש.</p></div>
-      <div class="card"><div class="icon">🏆</div><h3>תוצאות ודירוג</h3>
-        <p>אחרי המשחק מדווחים תוצאה, היריב מאשר, והדירוג והטבלה לפי רמה מתעדכנים.</p></div>
+<div class="wrap">
+  <header class="nav">
+    <nav class="links" aria-label="ראשי">
+      <a class="btn ball" href="https://t.me/rally_up_bot">להתחיל בטלגרם</a>
+      <a href="how.html">איך זה עובד</a>
+      <a href="#table">טבלת דירוג</a>
+      <a href="me.html">האזור שלי</a>
+    </nav>
+    <a class="brand" href="index.html"><span>Match Point</span><img src="assets/logo.png" alt=""></a>
+  </header>
+
+  <div class="hero">
+    <svg class="lines" viewBox="0 0 1100 460" preserveAspectRatio="none" aria-hidden="true">
+      <rect x="40" y="30" width="1020" height="400" fill="none" stroke="#fff" stroke-width="4"/>
+      <path d="M40 80h1020M40 380h1020M550 30v400M300 80v300M800 80v300M300 230h500" stroke="#fff" stroke-width="3" fill="none"/>
+    </svg>
+    <div class="ballfx" aria-hidden="true"></div>
+    <div class="badge"><span class="dot"></span>הטבלה זזה אחרי כל משחק</div>
+    <h1 class="display">המשחק הבא שלך כבר מחכה במגרש</h1>
+    <p>רוני הסוכן מוצא לך שותף ברמה שלך, בעיר ובזמן שנוח לך. כל תוצאה נרשמת – וכל ניצחון מקפיץ אותך בטבלה.</p>
+    <div class="row-gap">
+      <a class="btn ball big" href="https://t.me/rally_up_bot">להתחיל בטלגרם</a>
+      <a class="btn dark big" href="#table">לטבלת הדירוג</a>
+    </div>
+  </div>
+
+  <section id="table">
+    <div class="board-head">
+      <div>
+        <h2 class="display">לוח התוצאות</h2>
+        <div class="sub" id="board-sub">טוען…</div>
+      </div>
+      <div class="filters" id="filters" hidden>
+        <div class="pills" role="group" aria-label="רמה" id="levels"></div>
+        <div class="pills" role="group" aria-label="עיר" id="cities"></div>
+      </div>
+    </div>
+    <div id="board"></div>
+    <div class="legend" id="legend" hidden>
+      <span><b>מאזן</b> – משחקים שניצחת מול משחקים שהפסדת</span>
+      <span><b style="color: var(--streak)">רצף ניצחונות</b> – ניצחונות ברצף, בלי הפסד באמצע</span>
+      <span><b>חדש/ה</b> – פחות מ-5 משחקים, הדירוג עוד מתייצב</span>
+      <a href="how.html#points">איך נספרות הנקודות?</a>
     </div>
   </section>
 
   <section>
-    <h2>על השירות</h2>
+    <h2 class="display">שלוש מכות וזה במגרש</h2>
+    <div class="cards">
+      <div class="card"><div class="kicker">הגשה</div><h3>כותבים לרוני</h3><p>רמה, עיר ומתי נוח – שתי דקות בטלגרם.</p></div>
+      <div class="card"><div class="kicker">ראלי</div><h3>מקבלים שותף</h3><p>רוני שולח את הבקשה לשחקנים מתאימים, ומי שאומר כן מגיע אליך ככרטיס.</p></div>
+      <div class="card"><div class="kicker">נקודה</div><h3>מדווחים ומטפסים</h3><p>תוצאה במשפט אחד, והלוח מתעדכן.</p></div>
+    </div>
+    <p><a href="how.html">ההסבר המלא, כולל איך נספרות הנקודות ←</a></p>
+  </section>
+
+  <section>
+    <h2 class="display">על השירות</h2>
     <div class="card">
-      <p>Match Point הוא שירות קהילתי לשחקני טניס חובבים באזור ירושלים. השירות פועל דרך WhatsApp: השחקנים נרשמים
-        בשיחה, מגדירים את הרמה ואת הזמנים שבהם הם פנויים, ומקבלים בקשות משחק משחקנים אחרים רק אם בחרו בכך.
-        מספר הטלפון עובר לשחקן אחר רק אחרי ששני הצדדים הסכימו להתחבר. הזמנת המגרשים נעשית ישירות מול המועדונים.
-        שחקנים מתחת לגיל 18 מחוברים רק לבני גילם.</p>
+      <p>Match Point הוא שירות קהילתי לשחקני טניס חובבים בירושלים, בתל אביב ובחיפה. השירות פועל בצ'אט – בתקופת הניסיון
+        בטלגרם, ובהמשך גם ב-WhatsApp: השחקנים נרשמים בשיחה, מגדירים רמה ומתי נוח להם, ומקבלים בקשות משחק רק אם בחרו בכך.
+        מספר הטלפון עובר לשחקן אחר רק אחרי ששני הצדדים הסכימו להתחבר. את המגרש סוגרים ומשלמים ביניהם, ואנחנו מצרפים קישור
+        להזמנה. שחקנים מתחת לגיל 18 מחוברים רק לבני גילם ואינם מוצגים בטבלאות הציבוריות.</p>
     </div>
   </section>
 
   <section class="en" lang="en" dir="ltr">
-    <h2>About Match Point (English)</h2>
+    <h2 class="display">About Match Point</h2>
     <div class="card">
-      <p>Match Point is a community service for amateur tennis players in Jerusalem, Israel. Players chat with our
-        WhatsApp assistant to find a partner at their level for a given time window, and to keep track of their
-        results, rating and match history. Players only receive match requests if they opt in, phone numbers are
-        shared only after both players agree to connect, and anyone can delete all their data at any time by sending
-        the word "הסר" (remove). Court booking is done directly with the clubs.</p>
+      <p>Match Point is a community service for amateur tennis players in Jerusalem, Tel Aviv and Haifa, Israel. Players
+        chat with our assistant (on Telegram during the pilot, and on WhatsApp) to find a partner at their level for a
+        given time window, and to keep track of their results, rating and match history. Players only receive match
+        requests if they opt in, phone numbers are shared only after both players agree to connect, and anyone can
+        delete all their data at any time by sending the word "הסר" (remove). Courts are booked directly with the clubs.</p>
     </div>
   </section>
 
   <section id="contact" class="contact">
-    <h2>צור קשר · Contact</h2>
+    <h2 class="display">צור קשר · Contact</h2>
     <div class="card">
       <dl>
         <dt>שם העסק · Business</dt><dd>Match Point</dd>
@@ -81,13 +112,15 @@
       </dl>
     </div>
   </section>
-</main>
+</div>
 
 <footer class="site">
   <div class="wrap">
-    <span>© 2026 Match Point · ירושלים</span>
-    <span><a href="privacy.html">מדיניות פרטיות · Privacy</a> · <a href="terms.html">תנאי שימוש · Terms</a></span>
+    <span>בטבלה רק שם פרטי ואות – או בלי שם, עם אימוג'י. שחקנים מתחת ל-18 לא מוצגים, ואפשר לצאת מהטבלה בכל רגע.</span>
+    <span><a href="privacy.html">מדיניות פרטיות · Privacy</a> · <a href="terms.html">תנאי שימוש · Terms</a> · © 2026 Match Point</span>
   </div>
 </footer>
+
+<script src="board.js"></script>
 </body>
 </html>
