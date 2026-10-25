@@ -1,7 +1,7 @@
 {
  "ready": true,
- "ranked": 2,
- "players": 2,
+ "ranked": 3,
+ "players": 3,
  "tables": {
   "רמה 1": [],
   "רמה 2": [
@@ -32,11 +32,24 @@
     "streak": 0,
     "new": true,
     "move": 0
+   },
+   {
+    "rank": 2,
+    "name": "yedidia",
+    "anon": false,
+    "emoji": "🎾",
+    "city": "ירושלים",
+    "points": 1400,
+    "wins": 0,
+    "losses": 0,
+    "streak": 0,
+    "new": true,
+    "move": 0
    }
   ],
   "רמה 4": [],
   "רמה 5": []
  },
  "recent": [],
- "updated": "25.10 16:13"
+ "updated": "25.10 17:13"
 }
