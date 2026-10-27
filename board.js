@@ -43,8 +43,12 @@
       return `<div class="r in" style="animation-delay:${(i * 0.04).toFixed(2)}s">` +
         `<div class="rank"><b>${r.rank}</b>${move}</div>` +
         `<div class="who"><span class="av">${av}</span><span>${esc(r.name)}</span>${r.new ? '<span class="tag">חדש/ה</span>' : ""}</div>` +
-        `<div class="city-c">${esc(r.city || "")}</div><div>${r.wins}–${r.losses}</div>` +
-        `<div class="streak">${r.streak >= 2 ? r.streak + " ברצף" : "–"}</div><div class="pts">${r.points}</div></div>`;
+        // .meta is invisible on a wide screen (its cells sit in the table's columns); on a phone it's the line
+        // under the name
+        `<div class="meta"><div class="city-c">${esc(r.city || "")}</div>` +
+        `<div class="rec" data-label="מאזן">${r.wins}–${r.losses}</div>` +
+        (r.streak >= 2 ? `<div class="streak">${r.streak} ברצף</div>` : `<div class="streak none">–</div>`) +
+        `</div><div class="pts">${r.points}</div></div>`;
     }).join("");
     $("board").innerHTML = `<div class="board"><div class="grid">${head}${body}</div></div>`;
   }

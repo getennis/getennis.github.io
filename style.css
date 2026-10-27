@@ -97,6 +97,7 @@ h2.display { margin: 0 0 6px; font-size: clamp(36px, 5vw, 52px); line-height: 1.
 .board .r { display: grid; grid-template-columns: 76px minmax(0, 2fr) minmax(0, 1fr) 80px 110px 90px;
   align-items: center; padding: 12px 16px; border-block-start: 1px solid var(--line-2); }
 .board .r.head { background: var(--court); color: var(--muted); font-weight: 800; font-size: 14px; border: 0; }
+.board .meta { display: contents; }
 .board .r:not(.head):hover { background: #163A86; }
 .board .r.in { animation: flip .5s ease-out both; transform-origin: top; }
 @keyframes flip { from { opacity: 0; transform: rotateX(70deg); } }
@@ -178,11 +179,61 @@ footer.site { background: var(--deep); color: var(--muted); font-size: 14px; mar
 footer.site .wrap { display: flex; flex-wrap: wrap; gap: 10px 20px; justify-content: space-between; padding-block: 24px; }
 
 @media (max-width: 640px) {
-  .hero { padding: 36px 20px; min-block-size: 0; }
+  body { font-size: 16px; }
+  section { padding-block: 24px; }
+
+  /* header: "להתחיל בטלגרם" and the brand on one row, the three links as equal tabs below */
+  .nav { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); align-items: center; gap: 12px 6px;
+    padding-block: 14px; }
+  .nav .links { display: contents; }
+  .nav .links a.btn { grid-row: 1; grid-column: 1 / 4; justify-self: start; padding: 0 16px; }
+  .nav .brand { grid-row: 1; grid-column: 4 / 7; justify-self: end; gap: 8px; }
+  .brand span { font-size: 19px; }
+  .brand img { inline-size: 34px; block-size: 34px; }
+  .nav .links a:not(.btn) { grid-row: 2; grid-column: span 2; min-block-size: 44px; display: flex; align-items: center;
+    justify-content: center; text-align: center; font-size: 15px; line-height: 1.2; padding: 4px;
+    border: 1.5px solid var(--line); border-radius: 8px; }
+  .nav .links a[aria-current="page"] { background: var(--court-2); border-color: var(--ball); text-decoration: none; }
+
+  .hero { padding: 32px 20px; min-block-size: 0; border-radius: 18px; gap: 18px; }
   .hero .ballfx { display: none; }
-  .nav .links { gap: 8px 16px; font-size: 16px; }
+  .hero h1 { font-size: clamp(34px, 10.5vw, 46px); }
+  .hero p { font-size: 17px; }
+  .hero .row-gap .btn { flex: 1 1 100%; }
+
+  /* the scoreboard: no sideways scrolling – each player is a compact row with the points always in view */
+  .board { overflow: visible; }
+  .board .grid { min-inline-size: 0; }
+  .board .r.head { display: none; }
+  .board .r { grid-template-columns: 40px minmax(0, 1fr) auto; grid-template-areas: "rank who pts" "rank meta pts";
+    gap: 4px 10px; padding: 12px; }
+  .board .r > .rank { grid-area: rank; flex-direction: column; gap: 0; }
+  .board .r > .who { grid-area: who; font-size: 17px; gap: 10px; flex-wrap: wrap; }
+  .board .r > .pts { grid-area: pts; text-align: center; line-height: 1.1; }
+  .board .r > .pts::after { content: "נקודות"; display: block; font: 600 12px "Assistant", sans-serif; color: var(--muted); }
+  .board .meta { grid-area: meta; display: flex; flex-wrap: wrap; gap: 2px 14px; font-size: 14px; color: var(--soft);
+    padding-inline-start: 48px; }
+  .board .meta [data-label]::before { content: attr(data-label) " "; color: var(--muted); }
+  .board .meta .streak.none { display: none; }
+  .av { inline-size: 34px; block-size: 34px; font-size: 18px; }
+  .board-head { margin-block-end: 14px; }
+  .pill { min-inline-size: 44px; padding: 0 12px; }
+  .soon { padding: 28px 16px; }
+  .soon .big-num { font-size: 52px; }
+
+  .card { padding: 18px; }
   .step { gap: 14px; }
+  .step .n { inline-size: 48px; block-size: 48px; font-size: 24px; }
+  .band span { inline-size: auto; min-inline-size: 64px; font-size: 14px; }
+  .band b { inline-size: 56px; }
+  .doc { padding: 18px 16px; }
+  .doc h1 { font-size: 28px; }
   .contact dl { grid-template-columns: 1fr; }
+  .contact dd { margin-block-end: 8px; }
+}
+@media (max-width: 360px) {
+  .brand span { font-size: 17px; }
+  .nav .links a.btn { padding: 0 12px; font-size: 15px; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; }
