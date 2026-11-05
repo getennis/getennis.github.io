@@ -114,6 +114,7 @@ h2.display { margin: 0 0 6px; font-size: clamp(36px, 5vw, 52px); line-height: 1.
 .pts { font-family: "Secular One", sans-serif; font-size: 22px; }
 .legend { display: flex; flex-wrap: wrap; gap: 8px 24px; margin-block-start: 10px; color: var(--muted); font-size: 14px; }
 .legend b { color: var(--text); }
+.youth-note { margin-block: 14px 0; color: var(--muted); font-size: 14px; }
 .empty { padding: 28px; text-align: center; color: var(--soft); }
 .soon { background: var(--court-2); border: 2px dashed var(--line); border-radius: var(--radius); padding: 36px 24px;
   text-align: center; }

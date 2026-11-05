@@ -21,7 +21,7 @@
       `<p>הטבלה עולה כשיש ${need} שחקנים עם משחק מאושר. כל משחק שמדווחים לרוני מקרב אותה – ` +
       `אולי המשחק הבא שלך יפתח אותה 🎾</p>` +
       `<div class="meter" aria-hidden="true"><i style="inline-size:${Math.min(100, Math.round(100 * have / need))}%"></i></div>` +
-      `<p><a class="btn ball" href="https://t.me/rally_up_bot">להתחיל בטלגרם</a></p></div>`;
+      `<p><a class="btn ball" href="https://t.me/rally_up_bot">להתחיל עם הבוט</a></p></div>`;
   }
 
   function render() {
