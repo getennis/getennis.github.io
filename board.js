@@ -35,7 +35,7 @@
       $("board").innerHTML = `<div class="board"><div class="empty">עוד אין שחקנים בטבלה הזו – אולי תהיו הראשונים 🎾</div></div>`;
       return;
     }
-    const head = `<div class="r head"><div>מקום</div><div>שחקן/ית</div><div>עיר</div><div>מאזן</div><div>רצף ניצחונות</div><div>נקודות</div></div>`;
+    const head = `<div class="r head"><div>מקום</div><div>שחקן/ית</div><div>עיר</div><div>מאזן</div><div>רצף ניצחונות</div><div>נקודות</div><div></div></div>`;
     const body = rows.map((r, i) => {
       const move = r.move > 0 ? `<span class="up" aria-label="עלה ${r.move}">▲${r.move}</span>` :
         r.move < 0 ? `<span class="down" aria-label="ירד ${-r.move}">▼${-r.move}</span>` : "";
@@ -48,7 +48,10 @@
         `<div class="meta"><div class="city-c">${esc(r.city || "")}</div>` +
         `<div class="rec" data-label="מאזן">${r.wins}–${r.losses}</div>` +
         (r.streak >= 2 ? `<div class="streak">${r.streak} ברצף</div>` : `<div class="streak none">–</div>`) +
-        `</div><div class="pts">${r.points}</div></div>`;
+        `</div><div class="pts">${r.points}</div>` +
+        // the challenge link comes from the bot (services/challenges.py): t.me/…?start=ch_<code> or wa.me/…?text=…
+        `<div class="ch">${/^https:\/\/(t\.me|wa\.me)\//.test(r.challenge || "") ?
+          `<a class="ch-btn" href="${esc(r.challenge)}" target="_blank" rel="noopener" aria-label="לאתגר את ${esc(r.name)} למשחק">⚔️ אתגר</a>` : ""}</div></div>`;
     }).join("");
     $("board").innerHTML = `<div class="board"><div class="grid">${head}${body}</div></div>`;
   }
