@@ -188,7 +188,7 @@ footer.site .wrap { display: flex; flex-wrap: wrap; gap: 10px 20px; justify-cont
   body { font-size: 16px; }
   section { padding-block: 24px; }
 
-  /* header: "להתחיל בטלגרם" and the brand on one row, the three links as equal tabs below */
+  /* header: "להתחיל עם הבוט" and the brand on one row, the three links as equal tabs below */
   .nav { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); align-items: center; gap: 12px 6px;
     padding-block: 14px; }
   .nav .links { display: contents; }

@@ -21,7 +21,7 @@
       `<p>הטבלה עולה כשיש ${need} שחקנים עם משחק מאושר. כל משחק שמדווחים לרוני מקרב אותה – ` +
       `אולי המשחק הבא שלך יפתח אותה 🎾</p>` +
       `<div class="meter" aria-hidden="true"><i style="inline-size:${Math.min(100, Math.round(100 * have / need))}%"></i></div>` +
-      `<p><a class="btn ball" href="https://t.me/rally_up_bot">להתחיל עם הבוט</a></p></div>`;
+      `<p><a class="btn ball" href="https://wa.me/972515564580?text=%D7%94%D7%99%D7%99">להתחיל עם הבוט</a></p></div>`;
   }
 
   function render() {
@@ -49,7 +49,7 @@
         `<div class="rec" data-label="מאזן">${r.wins}–${r.losses}</div>` +
         (r.streak >= 2 ? `<div class="streak">${r.streak} ברצף</div>` : `<div class="streak none">–</div>`) +
         `</div><div class="pts">${r.points}</div>` +
-        // the challenge link comes from the bot (services/challenges.py): t.me/…?start=ch_<code> or wa.me/…?text=…
+        // the challenge link comes from the bot (services/challenges.py): wa.me/…?text=אתגר <code>
         `<div class="ch">${/^https:\/\/(t\.me|wa\.me)\//.test(r.challenge || "") ?
           `<a class="ch-btn" href="${esc(r.challenge)}" target="_blank" rel="noopener" aria-label="לאתגר את ${esc(r.name)} למשחק">⚔️ אתגר</a>` : ""}</div></div>`;
     }).join("");
